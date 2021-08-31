@@ -38,19 +38,22 @@ defmodule Web.MixProject do
   defp deps do
     [
       {:phoenix, "~> 1.6.0-rc.0", override: true},
-      {:phoenix_ecto, "~> 4.4"},
+      {:phoenix_ecto, "~> 4.0"},
+      {:floki, ">= 0.27.0", only: :test},
       {:phoenix_html, "~> 3.0"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:phoenix_live_view, "~> 0.16.0"},
-      {:floki, ">= 0.30.0", only: :test},
       {:phoenix_live_dashboard, "~> 0.5"},
-      {:esbuild, "~> 0.2", runtime: Mix.env() == :dev},
       {:telemetry_metrics, "~> 0.6"},
-      {:telemetry_poller, "~> 1.0"},
-      {:gettext, "~> 0.18"},
+      {:telemetry_poller, "~> 0.5"},
+      {:gettext, "~> 0.11"},
       {:hello, in_umbrella: true},
-      {:jason, "~> 1.2"},
-      {:plug_cowboy, "~> 2.5"}
+      {:jason, "~> 1.0"},
+      {:plug_cowboy, "~> 2.0"},
+      {:phx_gen_auth, "~> 0.5", only: [:dev], runtime: false},
+      # Graphing/charting - for Livebook or analysis
+      {:vega_lite, "~> 0.1.0"},
+      {:kino, "~> 0.1.0"}
     ]
   end
 
